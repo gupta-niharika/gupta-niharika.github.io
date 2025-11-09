@@ -6,7 +6,11 @@ export const Hero = () => {
           Hello
         </h1>
         <p className="text-2xl text-muted-foreground leading-relaxed">
-          I'm Niharika, a passionate software engineer.
+          I'm Niharika,
+        </p>
+        <p className="text-2xl text-muted-foreground leading-relaxed">
+          AI / ML Engineer, 
+          from Bengaluru - the Silicon Valley of India.
         </p>
       </div>
     </section>

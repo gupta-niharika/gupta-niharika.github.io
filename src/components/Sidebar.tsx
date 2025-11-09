@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { Github, Linkedin, Mail, Menu, X } from "lucide-react";
+import { Mail, Menu, X } from "lucide-react";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
 import profileImage from "@/assets/profile.jpeg";
 
 export const Sidebar = () => {
@@ -28,6 +29,7 @@ export const Sidebar = () => {
       <button
         className="lg:hidden fixed top-4 left-4 z-50 p-2 bg-background border rounded-md"
         onClick={() => setIsOpen(!isOpen)}
+        aria-label={isOpen ? "Close menu" : "Open menu"}
       >
         {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
       </button>
@@ -37,15 +39,18 @@ export const Sidebar = () => {
         className={`fixed top-0 left-0 h-screen w-64 bg-background border-r flex flex-col items-center justify-center p-8 z-40 transition-transform lg:translate-x-0 ${
           isOpen ? "translate-x-0" : "-translate-x-full"
         }`}
+        aria-hidden={!isOpen && true}
       >
         <div className="space-y-8 text-center">
-          {/* Profile Image */}
+          {/* Profile Image with Grow Effect */}
           <div className="flex justify-center">
-            <img
-              src={profileImage}
-              alt="Niharika Gupta"
-              className="w-32 h-32 rounded-full object-cover"
-            />
+            <div className="overflow-hidden rounded-full w-32 h-32 transform transition-transform duration-500 hover:scale-110">
+              <img
+                src={profileImage}
+                alt="Niharika Gupta"
+                className="w-full h-full object-cover"
+              />
+            </div>
           </div>
 
           {/* Name */}
@@ -70,24 +75,27 @@ export const Sidebar = () => {
           {/* Social Links */}
           <div className="flex gap-4 justify-center">
             <a
-              href="https://github.com"
+              href="https://github.com/your-username"
               target="_blank"
               rel="noopener noreferrer"
               className="p-2 hover:text-primary transition-colors"
+              aria-label="GitHub"
             >
-              <Github className="h-5 w-5" />
+              <FaGithub className="h-5 w-5" />
             </a>
             <a
-              href="https://linkedin.com"
+              href="https://linkedin.com/in/your-username"
               target="_blank"
               rel="noopener noreferrer"
               className="p-2 hover:text-primary transition-colors"
+              aria-label="LinkedIn"
             >
-              <Linkedin className="h-5 w-5" />
+              <FaLinkedin className="h-5 w-5" />
             </a>
             <a
               href="mailto:niharika@example.com"
               className="p-2 hover:text-primary transition-colors"
+              aria-label="Email"
             >
               <Mail className="h-5 w-5" />
             </a>
@@ -100,6 +108,7 @@ export const Sidebar = () => {
         <div
           className="lg:hidden fixed inset-0 bg-black/50 z-30"
           onClick={() => setIsOpen(false)}
+          aria-hidden="true"
         />
       )}
     </>
