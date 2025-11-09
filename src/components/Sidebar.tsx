@@ -42,21 +42,23 @@ export const Sidebar = () => {
         aria-hidden={!isOpen && true}
       >
         <div className="space-y-8 text-center">
-          {/* Profile Image with Grow Effect */}
+          {/* Profile Image with Persistent Gradient Ring & Grow Effect */}
           <div className="flex justify-center">
-            <div className="overflow-hidden rounded-full w-32 h-32 transform transition-transform duration-500 hover:scale-110">
-              <img
-                src={profileImage}
-                alt="Niharika Gupta"
-                className="w-full h-full object-cover"
-              />
+            <div className="relative rounded-full p-[3px] bg-gradient-to-tr from-[#feda75] via-[#fa7e1e] to-[#d62976] transform transition-transform duration-500 hover:scale-125">
+              <div className="overflow-hidden rounded-full w-32 h-32 bg-white">
+                <img
+                  src={profileImage}
+                  alt="Niharika Gupta"
+                  className="w-full h-full object-cover rounded-full"
+                />
+              </div>
             </div>
           </div>
 
           {/* Name */}
           <div>
             <h2 className="text-2xl font-bold">Niharika Gupta</h2>
-            <p className="text-muted-foreground mt-1">Software Engineer</p>
+            <p className="text-muted-foreground mt-1">AI & ML Engineer</p>
           </div>
 
           {/* Navigation */}
@@ -75,7 +77,7 @@ export const Sidebar = () => {
           {/* Social Links */}
           <div className="flex gap-4 justify-center">
             <a
-              href="https://github.com/your-username"
+              href="https://github.com/gupta-niharika"
               target="_blank"
               rel="noopener noreferrer"
               className="p-2 hover:text-primary transition-colors"
@@ -84,7 +86,7 @@ export const Sidebar = () => {
               <FaGithub className="h-5 w-5" />
             </a>
             <a
-              href="https://linkedin.com/in/your-username"
+              href="https://linkedin.com/in/niharika-p-gupta"
               target="_blank"
               rel="noopener noreferrer"
               className="p-2 hover:text-primary transition-colors"
@@ -93,7 +95,7 @@ export const Sidebar = () => {
               <FaLinkedin className="h-5 w-5" />
             </a>
             <a
-              href="mailto:niharika@example.com"
+              href="mailto:mailguptaniharika@gmail.com"
               className="p-2 hover:text-primary transition-colors"
               aria-label="Email"
             >
